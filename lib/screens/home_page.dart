@@ -51,13 +51,72 @@ class HomePage extends StatelessWidget {
                         ),
                       ),
                       onTap: () {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(
-                            content: Column(
-                              children: [],
-                            ),
-                          ),
-                        );
+                        showModalBottomSheet(
+                            context: context,
+                            builder: (context) {
+                              return Container(
+                                height: getHeight(315),
+                                width: getWidht(double.infinity),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(getHeight(12)),
+                                    topRight: Radius.circular(getHeight(12)),
+                                  ),
+                                ),
+                                child: Padding(
+                                  padding: EdgeInsets.only(
+                                      top: getHeight(32), left: getWidht(15)),
+                                  child: Column(
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Text(
+                                            "Filter",
+                                            style: TextStyle(
+                                              fontSize: getHeight(22),
+                                              fontWeight: FontWeight.w700,
+                                              color: const Color(0xff041E2F),
+                                            ),
+                                          ),
+                                          SizedBox(width: getWidht(209)),
+                                          Container(
+                                            height: getHeight(32),
+                                            width: getWidht(81.8),
+                                            decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(
+                                                getHeight(16),
+                                              ),
+                                              border: Border.all(
+                                                color: const Color(0xff041E2F),
+                                              ),
+                                            ),
+                                            child: Row(
+                                              children: [
+                                                SizedBox(width: getWidht(16)),
+                                                const Icon(
+                                                  Icons
+                                                      .restore_from_trash_rounded,
+                                                ),
+                                                Text(
+                                                  "Reset",
+                                                  style: TextStyle(
+                                                    fontSize: getHeight(12),
+                                                    fontWeight: FontWeight.w700,
+                                                    color:
+                                                        const Color(0xff041E2F),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          )
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              );
+                            });
                       },
                     ),
                     SizedBox(width: getWidht(16)),

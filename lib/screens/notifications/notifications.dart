@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:newexam/core/compliments/constants/sizeConfig.dart';
+import 'package:newexam/screens/notifications/notification_widgets.dart';
 
 class Notifications extends StatelessWidget {
   const Notifications({Key? key}) : super(key: key);
@@ -27,32 +28,14 @@ class Notifications extends StatelessWidget {
       ),
       body: Padding(
         padding: EdgeInsets.only(top: getHeight(16), left: getWidht(15)),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              height: getHeight(128),
-              width: getWidht(345),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(getHeight(8)),
-                image: const DecorationImage(
-                    image: AssetImage(
-                      "assets/images/download.jpeg",
-                    ),
-                    fit: BoxFit.cover),
-              ),
-            ),
-            SizedBox(height: getHeight(16)),
-            Text(
-              "Monday, 10 May 2021",
-              style: TextStyle(
-                fontSize: getHeight(12),
-                color: const Color(0xff2E0505),
-              ),
-            ),
-            SizedBox(height: getHeight(8)),
-            
-          ],
+        child: SizedBox(
+          height: double.infinity,
+          width: double.infinity,
+          child: ListView.builder(
+            itemBuilder: (context, index) {
+              return notif.NotifContiner();
+            },
+          ),
         ),
       ),
     );
