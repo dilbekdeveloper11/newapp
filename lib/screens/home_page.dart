@@ -12,6 +12,7 @@ class HomePage extends StatelessWidget {
       body: Padding(
         padding: EdgeInsets.only(top: getHeight(60), left: getWidht(15)),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               children: [
@@ -41,14 +42,55 @@ class HomePage extends StatelessWidget {
                         color: Colors.grey,
                       ),
                       SizedBox(width: getWidht(16)),
-                      SvgPicture.asset("assets/images/Frame 1.svg")
                     ],
                   ),
                 ),
                 SizedBox(width: getWidht(16)),
-                Image.asset("/home/dilbek/Desktop/Git Hub Projects/yangiloyiha/newexam/assets/images/Frame 1.png")
+                Container(
+                  height: getHeight(32),
+                  width: getWidht(32),
+                  child: Image.asset("assets/images/Frame 1.png"),
+                )
               ],
             ),
+            SizedBox(height: getHeight(24)),
+            Row(
+              children: [
+                Text(
+                  "Latest News",
+                  style: TextStyle(
+                    fontSize: getHeight(18),
+                    fontWeight: FontWeight.w700,
+                    color: Colors.black,
+                  ),
+                ),
+                SizedBox(width: getWidht(172)),
+                Text(
+                  "See all",
+                  style: TextStyle(
+                    fontSize: getHeight(12),
+                    fontWeight: FontWeight.w600,
+                    color: Color(0xff0080FF),
+                  ),
+                ),
+                SizedBox(width: getWidht(16)),
+                Icon(
+                  Icons.arrow_forward,
+                  size: getHeight(15),
+                  color: const Color(0xff0080FF),
+                )
+              ],
+            ),
+            SizedBox(height: getHeight(16)),
+            PageView(
+              children: [
+                Container(
+                  height: getHeight(240),
+                  width: getWidht(321),
+                  color: Colors.green,
+                ),
+              ],
+            )
           ],
         ),
       ),
