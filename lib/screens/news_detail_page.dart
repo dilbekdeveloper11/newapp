@@ -76,13 +76,41 @@ class NewsDetailPage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(getHeight(16)),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.all(18.0),
-                  child: Text(
-                    "",
-                    style: TextStyle(
-                      fontSize: getHeight(14),
-                      color: const Color(0xff2E0505),
-                    ),
+                  padding:
+                      EdgeInsets.only(top: getHeight(16), left: getWidht(16)),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Sunday, 9 May 2021",
+                        style: TextStyle(
+                          fontSize: getHeight(12),
+                          color: const Color(0xff2E0505),
+                        ),
+                      ),
+                      SizedBox(height: getHeight(8)),
+                      SizedBox(
+                        height: getHeight(58),
+                        width: getWidht(263),
+                        child: Text(
+                          "Crypto investors should be prepared to lose all their money, BOE governor says",
+                          style: TextStyle(
+                            fontSize: getHeight(16),
+                            fontWeight: FontWeight.w700,
+                            color: const Color(0xff2E0505),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: getHeight(12)),
+                      Text(
+                        "Published by Ryan Browne",
+                        style: TextStyle(
+                          fontWeight: FontWeight.w800,
+                          fontSize: getHeight(10),
+                          color: const Color(0xff2E0505),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),

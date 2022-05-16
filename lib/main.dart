@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:newexam/screens/home_page.dart';
 import 'package:newexam/screens/news_detail_page.dart';
+import 'package:newexam/screens/notifications.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const NewsDetailPage(),
+      home: const Notifications(),
     );
   }
 }
