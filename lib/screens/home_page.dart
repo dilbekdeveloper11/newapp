@@ -7,6 +7,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = PageController(initialPage: 1);
     SizeConfig.init(context);
     return Scaffold(
       body: Padding(
@@ -82,14 +83,71 @@ class HomePage extends StatelessWidget {
               ],
             ),
             SizedBox(height: getHeight(16)),
-            PageView(
-              children: [
-                Container(
-                  height: getHeight(240),
-                  width: getWidht(321),
-                  color: Colors.green,
-                ),
-              ],
+            Container(
+              height: getHeight(242),
+              child: PageView(
+                pageSnapping: false,
+                scrollDirection: Axis.horizontal,
+                controller: controller,
+                children: [
+                  Container(
+                    height: getHeight(240),
+                    width: getWidht(321),
+                    padding: EdgeInsets.symmetric(horizontal: getWidht(3)),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(getHeight(8)),
+                      color: Colors.amber,
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.only(
+                          top: getHeight(80), left: getWidht(10)),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "by Ryan Browne",
+                            style: TextStyle(
+                              fontSize: getHeight(getHeight(10)),
+                              color: Colors.white,
+                            ),
+                          ),
+                          Container(
+                            height: getHeight(63),
+                            width: getHeight(289),
+                            child: Text(
+                              "Crypto investors should be prepared to lose all their money, BOE governor says",
+                              style: TextStyle(
+                                fontSize: getHeight(18),
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                          SizedBox(height: getHeight(31)),
+                          Container(
+                            height: getHeight(28),
+                            width: getHeight(289),
+                            child: Text(
+                              "“I’m going to say this very bluntly again,” he added. “Buy them only if you’re prepared to lose all your money.”",
+                              style: TextStyle(
+                                fontSize: getHeight(10),
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Container(
+                    height: getHeight(240),
+                    width: getWidht(321),
+                    padding: EdgeInsets.symmetric(horizontal: getWidht(3)),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(getHeight(8)),
+                        color: Colors.black),
+                  ),
+                ],
+              ),
             )
           ],
         ),
