@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:newexam/core/compliments/components.dart';
 import 'package:newexam/core/compliments/constants/sizeConfig.dart';
 
 class HomePage extends StatelessWidget {
@@ -90,64 +91,48 @@ class HomePage extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 controller: controller,
                 children: [
-                  Container(
-                    height: getHeight(240),
-                    width: getWidht(321),
-                    padding: EdgeInsets.symmetric(horizontal: getWidht(3)),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(getHeight(8)),
-                      color: Colors.amber,
-                    ),
-                    child: Padding(
-                      padding: EdgeInsets.only(
-                          top: getHeight(80), left: getWidht(10)),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "by Ryan Browne",
-                            style: TextStyle(
-                              fontSize: getHeight(getHeight(10)),
-                              color: Colors.white,
-                            ),
-                          ),
-                          Container(
-                            height: getHeight(63),
-                            width: getHeight(289),
-                            child: Text(
-                              "Crypto investors should be prepared to lose all their money, BOE governor says",
-                              style: TextStyle(
-                                fontSize: getHeight(18),
-                                color: Colors.white,
-                              ),
-                            ),
-                          ),
-                          SizedBox(height: getHeight(31)),
-                          Container(
-                            height: getHeight(28),
-                            width: getHeight(289),
-                            child: Text(
-                              "“I’m going to say this very bluntly again,” he added. “Buy them only if you’re prepared to lose all your money.”",
-                              style: TextStyle(
-                                fontSize: getHeight(10),
-                                color: Colors.white,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  Container(
-                    height: getHeight(240),
-                    width: getWidht(321),
-                    padding: EdgeInsets.symmetric(horizontal: getWidht(3)),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(getHeight(8)),
-                        color: Colors.black),
-                  ),
+                  PageViewWidgets.PageContainer(
+                    byTitle: "by Ryan Browne",
+                    bigText:
+                        "Crypto investors should be prepared to lose all their money, BOE governor says",
+                    smallText:
+                        "“I’m going to say this very bluntly again,” he added. “Buy them only if you’re prepared to lose all your money.”",
+                  )
                 ],
               ),
+            ),
+            SizedBox(height: getHeight(24)),
+            Container(
+              height: getHeight(33),
+              child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) {
+                    return Row(
+                      children: [
+                        Container(
+                          height: getHeight(32),
+                          width: getWidht(76),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(getHeight(8)),
+                            color: const Color(0xffFF3A44),
+                          ),
+                          child: Center(
+                            child: Text(
+                              "Healthy",
+                              style: TextStyle(
+                                fontSize: getHeight(12),
+                                fontWeight: FontWeight.w600,
+                                color: Colors.white
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: getWidht(8),
+                        )
+                      ],
+                    );
+                  }),
             )
           ],
         ),
