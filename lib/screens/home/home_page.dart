@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:newexam/core/compliments/components.dart';
 import 'package:newexam/core/compliments/constants/sizeConfig.dart';
+import 'package:newexam/screens/home/home_page_widgets.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -67,6 +68,8 @@ class HomePage extends StatelessWidget {
                                   padding: EdgeInsets.only(
                                       top: getHeight(32), left: getWidht(15)),
                                   child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Row(
                                         children: [
@@ -111,6 +114,52 @@ class HomePage extends StatelessWidget {
                                             ),
                                           )
                                         ],
+                                      ),
+                                      SizedBox(height: getHeight(24)),
+                                      Text(
+                                        "Sort By",
+                                        style: TextStyle(
+                                          fontSize: getHeight(14),
+                                          fontWeight: FontWeight.w600,
+                                          color: const Color(0xff041E2F),
+                                        ),
+                                      ),
+                                      SizedBox(height: getHeight(16)),
+                                      Row(
+                                        children: [
+                                          filterCont.Containerim(),
+                                          SizedBox(width: getWidht(8)),
+                                          filterCont.Containerim(),
+                                          SizedBox(width: getWidht(8)),
+                                          filterCont.Containerim(),
+                                        ],
+                                      ),
+                                      SizedBox(height: getHeight(8)),
+                                      Row(
+                                        children: [
+                                          filterCont.Containerim(),
+                                          SizedBox(width: getWidht(8)),
+                                          filterCont.Containerim(),
+                                        ],
+                                      ),
+                                      SizedBox(height: getHeight(32)),
+                                      Container(
+                                        height: getHeight(48),
+                                        width: getHeight(345),
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(
+                                            getHeight(24),
+                                          ),
+                                          color: Colors.red,
+                                        ),
+                                        child: Center(child: Text(
+                                        "Save",
+                                        style: TextStyle(
+                                          fontSize: getHeight(16),
+                                          fontWeight: FontWeight.w800,
+                                          color: Colors.white,
+                                        ),
+                                      ),),
                                       )
                                     ],
                                   ),

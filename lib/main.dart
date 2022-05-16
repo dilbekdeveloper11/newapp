@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:newexam/screens/home_page.dart';
+import 'package:newexam/screens/home/home_page.dart';
 import 'package:newexam/screens/news_detail_page.dart';
 import 'package:newexam/screens/notifications/notifications.dart';
 
