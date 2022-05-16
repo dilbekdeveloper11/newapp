@@ -14,40 +14,51 @@ class HomePage extends StatelessWidget {
       body: ListView(
         children: [
           Padding(
-            padding: EdgeInsets.only(top: getHeight(60), left: getWidht(15)),
+            padding: EdgeInsets.only(top: getHeight(30), left: getWidht(15)),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   children: [
-                    Container(
-                      height: getHeight(32),
-                      width: getWidht(296),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(16),
-                        border: Border.all(
-                          color: Colors.grey.withOpacity(0.3),
+                    InkWell(
+                      child: Container(
+                        height: getHeight(32),
+                        width: getWidht(296),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(16),
+                          border: Border.all(
+                            color: Colors.grey.withOpacity(0.3),
+                          ),
+                        ),
+                        child: Row(
+                          children: [
+                            SizedBox(width: getWidht(16)),
+                            Text(
+                              "Dogecoin to the Moon",
+                              style: TextStyle(
+                                fontSize: getHeight(12),
+                                color: const Color(0xff818181),
+                              ),
+                            ),
+                            const Spacer(),
+                            Icon(
+                              Icons.search,
+                              size: getHeight(18),
+                              color: Colors.grey,
+                            ),
+                            SizedBox(width: getWidht(16)),
+                          ],
                         ),
                       ),
-                      child: Row(
-                        children: [
-                          SizedBox(width: getWidht(16)),
-                          Text(
-                            "Dogecoin to the Moon",
-                            style: TextStyle(
-                              fontSize: getHeight(12),
-                              color: const Color(0xff818181),
+                      onTap: () {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Column(
+                              children: [],
                             ),
                           ),
-                          const Spacer(),
-                          Icon(
-                            Icons.search,
-                            size: getHeight(18),
-                            color: Colors.grey,
-                          ),
-                          SizedBox(width: getWidht(16)),
-                        ],
-                      ),
+                        );
+                      },
                     ),
                     SizedBox(width: getWidht(16)),
                     Container(
