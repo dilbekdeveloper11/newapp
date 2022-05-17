@@ -62,67 +62,69 @@ class PageViewWidgets {
   }
 }
 
-
-class Category{
-  static Categorys(){
-    return Container(
-              height: getHeight(128),
-              width: getWidht(344),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(
-                  getHeight(8),
-                ),
-                image: const DecorationImage(
-                  image: AssetImage(
-                    "assets/images/steto_big.jpg",
+class Category {
+  static Categorys({required BuildContext context}) {
+    return InkWell(
+      child: Container(
+        height: getHeight(128),
+        width: getWidht(344),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(
+            getHeight(8),
+          ),
+          image: const DecorationImage(
+            image: AssetImage(
+              "assets/images/steto_big.jpg",
+            ),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Padding(
+          padding: EdgeInsets.only(
+            top: getHeight(16),
+            left: getWidht(10),
+          ),
+          child: Column(
+            children: [
+              SizedBox(
+                height: getHeight(42),
+                width: getWidht(328),
+                child: Text(
+                  "5 things to know about the 'conundrum' of lupus",
+                  style: TextStyle(
+                    fontSize: getHeight(15),
+                    fontWeight: FontWeight.w600,
+                    color: Colors.black,
                   ),
-                  fit: BoxFit.cover,
                 ),
               ),
-              child: Padding(
-                padding: EdgeInsets.only(
-                  top: getHeight(16),
-                  left: getWidht(10),
-                ),
-                child: Column(
-                  children: [
-                    SizedBox(
-                      height: getHeight(42),
-                      width: getWidht(328),
-                      child: Text(
-                        "5 things to know about the 'conundrum' of lupus",
-                        style: TextStyle(
-                          fontSize: getHeight(15),
-                          fontWeight: FontWeight.w600,
-                          color: Colors.black,
-                        ),
-                      ),
+              SizedBox(height: getHeight(40)),
+              Row(
+                children: [
+                  Text(
+                    "Matt Villano",
+                    style: TextStyle(
+                      fontSize: getHeight(14),
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black,
                     ),
-                    SizedBox(height: getHeight(40)),
-                    Row(
-                      children: [
-                        Text(
-                          "Matt Villano",
-                          style: TextStyle(
-                            fontSize: getHeight(14),
-                            fontWeight: FontWeight.w600,
-                            color: Colors.black,
-                          ),
-                        ),
-                        SizedBox(width: getWidht(120)),
-                        Text(
-                          "Sunday, 9 May 2021",
-                          style: TextStyle(
-                            fontSize: getHeight(14),
-                            fontWeight: FontWeight.w600,
-                            color: Colors.black,
-                          ),
-                        ),
-                      ],
-                    )
-                  ],
-                ),
-              ),
-            );
+                  ),
+                  SizedBox(width: getWidht(120)),
+                  Text(
+                    "Sunday, 9 May 2021",
+                    style: TextStyle(
+                      fontSize: getHeight(14),
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black,
+                    ),
+                  ),
+                ],
+              )
+            ],
+          ),
+        ),
+      ),
+      onTap: (){Navigator.pushNamed(context, "/notification");},
+    );
   }
 }

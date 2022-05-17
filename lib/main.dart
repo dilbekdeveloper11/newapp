@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:newexam/core/compliments/constants/router_page.dart';
+import 'package:newexam/screens/Error_page.dart';
 import 'package:newexam/screens/home/home_page.dart';
 import 'package:newexam/screens/news_detail_page.dart';
 import 'package:newexam/screens/notifications/notifications.dart';
@@ -19,7 +21,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomePage(),
+      
+      initialRoute: "/",
+      onGenerateRoute: RouteGenerator.generateRoute,
     );
   }
 }

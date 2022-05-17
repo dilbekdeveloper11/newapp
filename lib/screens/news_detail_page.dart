@@ -18,6 +18,32 @@ class NewsDetailPage extends StatelessWidget {
         child: Stack(
           children: [
             Positioned(
+              top: getHeight(52),
+              left: getWidht(15),
+              child: InkWell(
+                child: Container(
+                  height: getHeight(32),
+                  width: getWidht(32),
+                  decoration: BoxDecoration(
+                    color: Colors.grey.withOpacity(0.5),
+                    borderRadius: BorderRadius.circular(
+                      getHeight(8),
+                    ),
+                  ),
+                  child: Center(
+                    child: Icon(
+                      Icons.arrow_back_ios,
+                      size: getHeight(18),
+                    ),
+                  ),
+                
+                ),
+                onTap: (){
+                  Navigator.pushNamed(context, "/");
+                },
+              ),
+            ),
+            Positioned(
               top: getHeight(404),
               child: Container(
                 height: getHeight(438),

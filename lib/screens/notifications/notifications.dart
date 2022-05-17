@@ -11,9 +11,14 @@ class Notifications extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        leading: const Icon(
-          Icons.arrow_back_ios,
-          color: Colors.black,
+        leading:  InkWell(
+          child: const Icon(
+            Icons.arrow_back_ios,
+            color: Colors.black,
+          ),
+          onTap: (){
+            Navigator.pushNamed(context, "/");
+          },
         ),
         backgroundColor: Colors.transparent,
         elevation: 0,

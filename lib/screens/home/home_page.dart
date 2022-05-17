@@ -143,23 +143,30 @@ class HomePage extends StatelessWidget {
                                         ],
                                       ),
                                       SizedBox(height: getHeight(32)),
-                                      Container(
-                                        height: getHeight(48),
-                                        width: getHeight(345),
-                                        decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(
-                                            getHeight(24),
+                                      InkWell(
+                                        child: Container(
+                                          height: getHeight(48),
+                                          width: getHeight(345),
+                                          decoration: BoxDecoration(
+                                            borderRadius: BorderRadius.circular(
+                                              getHeight(24),
+                                            ),
+                                            color: Colors.red,
                                           ),
-                                          color: Colors.red,
+                                          child: Center(
+                                            child: Text(
+                                              "Save",
+                                              style: TextStyle(
+                                                fontSize: getHeight(16),
+                                                fontWeight: FontWeight.w800,
+                                                color: Colors.white,
+                                              ),
+                                            ),
+                                          ),
                                         ),
-                                        child: Center(child: Text(
-                                        "Save",
-                                        style: TextStyle(
-                                          fontSize: getHeight(16),
-                                          fontWeight: FontWeight.w800,
-                                          color: Colors.white,
-                                        ),
-                                      ),),
+                                        onTap: (){
+                                          Navigator.pop(context);
+                                        },
                                       )
                                     ],
                                   ),
@@ -212,12 +219,17 @@ class HomePage extends StatelessWidget {
                     scrollDirection: Axis.horizontal,
                     controller: controller,
                     children: [
-                      PageViewWidgets.PageContainer(
-                        byTitle: "by Ryan Browne",
-                        bigText:
-                            "Crypto investors should be prepared to lose all their money, BOE governor says",
-                        smallText:
-                            "“I’m going to say this very bluntly again,” he added. “Buy them only if you’re prepared to lose all your money.”",
+                      InkWell(
+                        child: PageViewWidgets.PageContainer(
+                          byTitle: "by Ryan Browne",
+                          bigText:
+                              "Crypto investors should be prepared to lose all their money, BOE governor says",
+                          smallText:
+                              "“I’m going to say this very bluntly again,” he added. “Buy them only if you’re prepared to lose all your money.”",
+                        ),
+                        onTap: () {
+                          Navigator.pushNamed(context, "/newdetail");
+                        },
                       )
                     ],
                   ),
@@ -261,15 +273,15 @@ class HomePage extends StatelessWidget {
                       }),
                 ),
                 SizedBox(height: getHeight(16)),
-                Category.Categorys(),
+                Category.Categorys(context: context),
                 SizedBox(height: getHeight(16)),
-                Category.Categorys(),
+                Category.Categorys(context: context),
                 SizedBox(height: getHeight(16)),
-                Category.Categorys(),
+                Category.Categorys(context: context),
                 SizedBox(height: getHeight(16)),
-                Category.Categorys(),
+                Category.Categorys(context: context),
                 SizedBox(height: getHeight(16)),
-                Category.Categorys(),
+                Category.Categorys(context: context),
                 SizedBox(height: getHeight(16)),
               ],
             ),
